@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Красивый эффект прослушивания</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p>click or drag</p>
+    <!-- Атрибут dropzone нужен, чтобы показать, что в элемент можно перетащить файл. -->
+    <div dropzone>
+      <span class="material-icons">add</span>
+      <input type="file" accept="audio/*">
+    </div>
+    <canvas></canvas>
+  </div>
+
+  <script src="anime.min.js"></script>
+  <script src="main.js"></script>
+  </body>
+</html>
