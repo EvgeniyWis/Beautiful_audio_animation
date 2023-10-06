@@ -18,6 +18,11 @@ dropZone.ondrop = e => {
         file = e.dataTransfer.items[0].getAsFile();
     } else return;
     // передаем файл
+    for (let audio of audios) { // Проходимся по всем запущенным аудио файлам и останавливаем их.
+        if (!audio.paused) {
+            audio.pause();
+        }
+    }
     playTrack(file); // Передаём файл в функцию для самого плеера.
 };
 
@@ -33,6 +38,11 @@ dropZone.onclick = () => {
     input.click();
     // при изменении инпута
     input.onchange = () => {
+        for (let audio of audios) { // Проходимся по всем запущенным аудио файлам и останавливаем их.
+            if (!audio.paused) {
+                audio.pause();
+            }
+        }
         // получаем файл
         file = input.files[0];
         // Передаём файл в функцию для самого плеера.
@@ -64,9 +74,10 @@ let C = document.querySelector("canvas"),
     lineColor;
 
 // Код плеера
+let audios = []; // Массив для хранения всех аудио файлов
 function playTrack(file) {
     // Убираем зону
-    dropZone.style.display = "none";
+    dropZone.classList.add("dropzone_start");
 
     text = document.querySelector("p");
 
@@ -109,10 +120,11 @@ function playTrack(file) {
 
     // Выводим в консоль ниструкцию по управлению
     console.log(
-        "Используй клавиатуру: \n Пробел для пуска/паузы \n Enter для паузы \n Стрелочки, чтобы изменять \n Время и Громкость"
+        "Используй клавиатуру: \n Пробел для пуска/паузы \n Enter для паузы \n Стрелочки, чтобы изменять \n Время и Громкость \nЧтобы изменить аудио файл кликните по плееру"
     );
 
     audio = new Audio();
+    audios.push(audio); // Добавляем аудио файл в массив
     // аудио контекст представляет собой объект, состоящий из аудио модулей
     // он управляет созданием узлов и выполняет обработку (декодирование) аудио данных
     context = new AudioContext();
