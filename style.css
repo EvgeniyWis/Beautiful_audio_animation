@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 p {
@@ -41,6 +42,11 @@ div {
     border: 1px dashed #ddd;
     border-radius: 10%;
     cursor: pointer;
+}
+
+.dropzone_start {
+    position: absolute;
+    opacity: 0;
 }
 
 .material-icons {
