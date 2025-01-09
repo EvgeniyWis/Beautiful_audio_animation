@@ -7,4 +7,4 @@
    1. Склонируйте данный репозиторий.
    2. Откройте файл ```index.html```
 
-Или вы можете просто зайти на [сайт](https://kriswis.github.io/Beautiful_audio_animation/), загруженный на Github Pages.
+Или вы можете просто зайти на [сайт](https://evgeniywis.github.io/Beautiful_audio_animation/), загруженный на Github Pages.
